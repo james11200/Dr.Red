@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.Red</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Century Gothic", 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+        .superlink {
+            text-decoration: underline;
+            color: rgb(35, 159, 237);
+          }
+                  
+        .hero {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+          }
+          
+          .hero-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+          
+          .rounded-circle {
+            max-width: 45vw; 
+            max-height: auto;
+          }
+          .et-hero-bottom-text {
+            padding: 5%;
+            text-align: center;
+          }
+
+
+
+        .et-hero-tabs,
+        .et-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            background: #eee;
+            text-align: center;
+            padding: 0 2em;
+        }
+
+        .et-hero-tabs h1 {
+            font-size: 0.6rem;
+            margin: 0;
+            opacity: 0.9;
+
+        }
+
+         h3 {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+        .h3 {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .et-hero-tabs-container {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            z-index: 10;
+        }
+
+        .et-hero-tabs-container.et-hero-tabs-container--top {
+            position: fixed;
+            top: 0;
+        }
+
+        .et-hero-tab {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            color: #000;
+            letter-spacing: 0.1rem;
+            transition: all 0.5s ease;
+            font-size: 0.8rem;
+        }
+
+        .et-hero-tab:hover {
+            color: white;
+            background: rgba(102, 177, 241, 0.8);
+            transition: all 0.5s ease;
+        }
+
+        .et-hero-tab-slider {
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 6px;
+            background: #66B1F1;
+            transition: left 0.3s ease;
+        }
+
+        .img-fluid{
+            max-height: 70vh;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+        @media (max-width: 1500px) {
+            .et-hero-tabs h1 {
+                font-size: 2rem;
+            }
+            .et-hero-tabs h3 {
+                font-size: 1rem;
+            }
+            .et-hero-tab {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!-- Add jQuery before your custom script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <section class="et-hero-tabs">
+
+    <div class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left">
+            <div class="hero-img">
+              <img class="rounded-circle" src="./portrait/IMG_1934.jpg" alt="Dr.Red handsome photo">
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-md-right">
+            <div class="et-hero-bottom-text">
+              <h1 class="h1">我是 <b>鄭瑞德醫師 Dr.Red</b></h1>
+              <h3>
+                ⬇️合作請加入以下連結line⬇️<br>
+                <a href="lin.ee/qNoaCl3" class="superlink">lin.ee/qNoaCl3</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#tab-es6">ES6</a>
+      <a class="et-hero-tab" href="#tab-flexbox">Flexbox</a>
+      <a class="et-hero-tab" href="#tab-react">React</a>
+      <a class="et-hero-tab" href="#tab-angular">Angular</a>
+      <a class="et-hero-tab" href="#tab-other">Other</a>
+      <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="et-main">
+    <section class="et-slide" id="tab-es6">
+
+     <div class="container">
+
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-right">
+            <div class="main-img">
+              <img class="img-fluid" src="./portrait/IMG_1935.JPG" alt="Dr.Red handsome photo">
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-md">
+            <div class="et-about-text">
+              <h3 class="h3" >
+                家醫科專科醫師/ 微整型美容專科醫師<br>
+                運動醫學/減重/醫美<br>
+                從脂肪肝到體脂8%的運動處方認證醫師<br>
+                🎬醫學大聯盟/小明星大跟班/郁見新同學/姊妹亮起來/同學來了/醫師好辣/我就問你正常嗎/小姊不熙娣<br>
+                🏥佳飛雅緻美學診所負責人<br>
+                臺大住院醫師<br>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="et-slide" id="tab-flexbox">
+      <h1>Flexbox</h1>
+      <h3>something about flexbox</h3>
+    </section>
+    <section class="et-slide" id="tab-react">
+      <h1>React</h1>
+      <h3>something about react</h3>
+    </section>
+    <section class="et-slide" id="tab-angular">
+      <h1>Angular</h1>
+      <h3>something about angular</h3>
+    </section>
+    <section class="et-slide" id="tab-other">
+      <h1>Other</h1>
+      <h3>something about other</h3>
+    </section>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    class StickyNavigation {
+        constructor() {
+            this.currentId = null;
+            this.currentTab = null;
+            this.tabContainerHeight = 70;
+            this.bindEvents();
+            this.checkTabContainerPosition();
+            this.findCurrentTabSelector();
+        }
+
+        bindEvents() {
+            let self = this;
+            $(window).scroll(() => { this.onScroll(); });
+            $(window).resize(() => { this.onResize(); });
+
+            $('a').on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    let hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - self.tabContainerHeight + 1
+                    }, 800, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        }
+
+        onScroll() {
+            this.checkTabContainerPosition();
+            this.findCurrentTabSelector();
+        }
+
+        onResize() {
+            if (this.currentId) {
+                this.setSliderCss();
+            }
+        }
+
+        checkTabContainerPosition() {
+            let offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - this.tabContainerHeight;
+            if ($(window).scrollTop() > offset) {
+                $('.et-hero-tabs-container').addClass('et-hero-tabs-container--top');
+            } else {
+                $('.et-hero-tabs-container').removeClass('et-hero-tabs-container--top');
+            }
+        }
+
+        findCurrentTabSelector() {
+            let newCurrentId;
+            let newCurrentTab;
+            let self = this;
+            $('.et-hero-tab').each(function() {
+                let id = $(this).attr('href');
+                let offsetTop = $(id).offset().top - self.tabContainerHeight;
+                let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
+                if ($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+                    newCurrentId = id;
+                    newCurrentTab = $(this);
+                }
+            });
+            if (this.currentId != newCurrentId || this.currentId === null) {
+                this.currentId = newCurrentId;
+                this.currentTab = newCurrentTab;
+                this.setSliderCss();
+            }
+        }
+
+        setSliderCss() {
+            let width = 0;
+            let left = 0;
+            if (this.currentTab) {
+                width = this.currentTab.css('width');
+                left = this.currentTab.offset().left;
+            }
+            $('.et-hero-tab-slider').css('width', width);
+            $('.et-hero-tab-slider').css('left', left);
+        }
+    }
+
+    $(document).ready(function() {
+        new StickyNavigation();
+    });
+</script>
+
+</body>
+</html>
