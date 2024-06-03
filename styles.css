@@ -31,7 +31,8 @@ a {
 
 .rounded-circle {
   max-width: 45vw; 
-  max-height: auto;
+  max-height: 65vh;
+  ;
 }
 .et-hero-bottom-text {
   padding: 5%;
