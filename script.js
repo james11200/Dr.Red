@@ -19,8 +19,8 @@ class StickyNavigation {
               let hash = this.hash;
 
               $('html, body').animate({
-                  scrollTop: $(hash).offset().top - self.tabContainerHeight + 1
-              }, 800, function() {
+                  scrollTop: $(hash).offset().top 
+              }, 700, function() {
                   window.location.hash = hash;
               });
           }

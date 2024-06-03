@@ -112,10 +112,11 @@ h3 {
 }
 
 .img-fluid{
-  max-height: 70vh;
-  padding-top: 5vh;
+  max-height: 65vh;
+  padding-top: 2.3rem;
   padding-bottom: 5vh;
 }
+
 @media (max-width: 1500px) {
   .et-hero-tabs h1 {
       font-size: 2rem;
