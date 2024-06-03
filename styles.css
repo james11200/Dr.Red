@@ -30,18 +30,15 @@ a {
 }
 
 .rounded-circle {
-  max-width: 45vw; 
-  max-height: 65vh;
+  max-width: 65vw; 
+  max-height: 45vh;
   ;
-}
-.et-hero-bottom-text {
-  padding: 5%;
-  text-align: center;
 }
 
 
 
 .et-hero-tabs,
+
 .et-slide {
   display: flex;
   flex-direction: column;
@@ -63,6 +60,7 @@ a {
 
 .no-wrap {
   white-space: nowrap;
+  
 }
 
 h3 {
@@ -73,7 +71,7 @@ h3 {
   font-size: 1rem;
   opacity: 0.7;
 }
-.et-hero-tabs-container {
+.et-hero-tabs-container { /* top bar */
   display: flex;
   flex-direction: row;
   position: absolute;
