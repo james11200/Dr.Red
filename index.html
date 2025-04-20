@@ -110,7 +110,7 @@ body {
   height: 60px;
   background: rgba(255,255,255,0.98);
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  z-index: 1000;
+  z-index: 9999;
   backdrop-filter: blur(6px);
 }
 
@@ -165,6 +165,11 @@ body {
 }
 
 @media (max-width: 576px) {
+  .et-hero-tabs-container {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
   .table-schedule td {
     padding: 0.8rem;
     display: block;
@@ -184,27 +189,6 @@ body {
 </head>
 <body>
 
- <!-- Hero -->
- <section class="et-hero-tabs" id="tab-home">
-    <div class="container max-width-adaptive-md">
-      <div class="row align-items-center">
-        
-        <div class="col-md-6 text-center text-md-left">
-            <img class="rounded-circle" src="./portrait/IMG_1934.jpg" alt="Dr.Red handsome photo">
-        </div>
-
-        <div class="col-md-6 text-center text-md-left" >
-          <p class="lh-base" style="font-size:1vh; "></p>
-            <h1 class="h1">我是<b class="no-wrap">鄭瑞德醫師</b> <b>Dr.Red</b></h1>
-            <h3 class="no-wrap">
-              ⬇️合作邀約請加入以下Line連結⬇️<br>
-              <a href="lin.ee/qNoaCl3" class="hyperlink">lin.ee/qNoaCl3</a>
-
-            </h3>
-        </div>
-      </div>
-    </div>
-</section>
 
 <section class="et-hero-tabs1">  
 
@@ -218,6 +202,27 @@ body {
     <a class="et-hero-tab" href="#tab-reward">獲獎</a>
     <a class="et-hero-tab" href="#tab-endorsement">代言</a>
     <span class="et-hero-tab-slider"></span>
+  </div>
+</section>
+
+ <section class="et-hero-tabs" id="tab-home">
+  <div class="container max-width-adaptive-md">
+    <div class="row align-items-center">
+      
+      <div class="col-md-6 text-center text-md-left">
+          <img class="rounded-circle" src="./portrait/IMG_1934.jpg" alt="Dr.Red handsome photo">
+      </div>
+
+      <div class="col-md-6 text-center text-md-left" >
+        <p class="lh-base" style="font-size:1vh; "></p>
+          <h1 class="h1">我是<b class="no-wrap">鄭瑞德醫師</b> <b>Dr.Red</b></h1>
+          <h3 class="no-wrap">
+            ⬇️合作邀約請加入以下Line連結⬇️<br>
+            <a href="lin.ee/qNoaCl3" class="hyperlink">lin.ee/qNoaCl3</a>
+
+          </h3>
+      </div>
+    </div>
   </div>
 </section>
 
