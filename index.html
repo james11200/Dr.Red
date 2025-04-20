@@ -125,7 +125,30 @@ body {
   transition: all 0.2s ease;
   font-size: 0.95rem;
 }
+.et-hero-tabs-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
 
+.et-hero-tab {
+  /* 如果你只想在手機上左右滑，才動態讓 tab 都 auto-width： */
+  /* @media(max-width: 576px) { */  
+    flex: 0 0 auto;
+  /* } */
+}
+
+.et-hero-tab.et-hero-tab-icon {
+  flex: 0 0 auto !important;  /* 再加個 !important 保險也行 */
+  padding: 0;
+  margin-right: .5rem;
+}
+
+.et-hero-tab-icon img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
 .et-hero-tab.active {
   color: #5E534B !important; 
   background: #D2CABF !important; 
