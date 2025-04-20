@@ -135,15 +135,15 @@
       -webkit-overflow-scrolling: touch;
     }
     
-    .et-hero-tab {
-      flex: 1;                 /* evenly distribute by default */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #495057;
-      transition: all 0.2s ease;
-      font-size: 0.95rem;
-    }
+    .et-hero-tabs-container .et-hero-tab {
+        flex: 1;                 /* evenly distribute by default */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #495057;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+          }
     
     .et-hero-tab:hover {
       background: rgba(210,202,191,0.9) !important;
@@ -158,22 +158,25 @@
     
     /* ── Icon‑only Tab Override ────────────────────────────────────────────── */
     .et-hero-tab-icon {
-      flex: 0 0 auto;   /* only as wide as content */
-      padding: 0;       /* remove left/right padding */
-      margin-right: 0.5rem;
+      flex: 0 0 auto !important;
+      padding: 0;
+      margin-right: .5rem;
     }
-    
     .et-hero-tab-icon img {
       display: block;
-      height: 100%;     /* fill tab height */
-      width: auto;      /* keep aspect ratio */
+      height: 100%;
+      width: auto;
     }
-    
     /* ── Small‑screen Tab Behavior ─────────────────────────────────────────── */
     @media (max-width: 576px) {
-      .et-hero-tab {
-        flex: 0 0 auto;  /* shrink-to-fit on phones */
-        padding: 0 8px;  
+      .et-hero-tabs-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .et-hero-tabs-container .et-hero-tab {
+        flex: 0 0 auto;
+        padding: 0 8px;
       }
     }
     
