@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr.Red</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+
   <!-- Include Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- 引入字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
 
   <!-- 在<head>添加圖標庫 -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
   <style>
 /* 完整CSS */
 :root {
@@ -21,10 +24,10 @@
 }
 
 body {
-  font-family: 'ZCOOL KuaiLe', cursive;
   background: #ffffff;
   overflow-x: hidden;
   line-height: 1.6;
+  font-family: 'Noto Serif TC', serif, 'Arial', sans-serif;
 }
 
 /* 首屏樣式 */
@@ -33,6 +36,19 @@ body {
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+/* 2. CSS 覆寫：讓它只撐內容寬度、去掉左右 padding */
+
+.et-hero-tab.et-hero-tab-icon {
+  flex: 0 0 auto;     /* 只撐內容寬度 */
+  padding: 0;         /* 去掉左右內距 */
+  margin-right: .5rem;
+}
+/* 3. 讓 img 撐滿 tab 高度，寬度自動等比縮放 */
+.et-hero-tab-icon img {
+  display: block;
+  height: 100%;      /* 滿版 tab 的高度 */
+  width: auto;       /* 自動維持 icon 長寬比 */
 }
 
 .rounded-circle {
@@ -169,7 +185,7 @@ body {
 <body>
 
  <!-- Hero -->
- <section class="et-hero-tabs">
+ <section class="et-hero-tabs" id="tab-home">
     <div class="container max-width-adaptive-md">
       <div class="row align-items-center">
         
@@ -179,11 +195,9 @@ body {
 
         <div class="col-md-6 text-center text-md-left" >
           <p class="lh-base" style="font-size:1vh; "></p>
-          <br>
-          <br>
             <h1 class="h1">我是<b class="no-wrap">鄭瑞德醫師</b> <b>Dr.Red</b></h1>
             <h3 class="no-wrap">
-              ⬇️合作請加入以下連結line⬇️<br>
+              ⬇️合作邀約請加入以下Line連結⬇️<br>
               <a href="lin.ee/qNoaCl3" class="hyperlink">lin.ee/qNoaCl3</a>
 
             </h3>
@@ -195,7 +209,10 @@ body {
 <section class="et-hero-tabs1">  
 
   <div class="et-hero-tabs-container">
-    <a class="et-hero-tab" href="#tab-about">關於</a>
+    <a class="et-hero-tab et-hero-tab-icon" href="#tab-home">
+      <img src="icon.png" alt="Home" />
+    </a>
+        <a class="et-hero-tab" href="#tab-about">關於</a>
     <a class="et-hero-tab" href="#tab-schedule">門診時段</a>
     <a class="et-hero-tab" href="#tab-certification">證書</a>
     <a class="et-hero-tab" href="#tab-reward">獲獎</a>
@@ -207,37 +224,37 @@ body {
 <!-- Main -->
 <main class="et-main">
   <section class="et-slide" id="tab-about">
-    
     <div class="container max-width-adaptive-md">
-      <!-- <div class="about-section-container"> -->
-          <div class="row align-items-center">
-
-            <div class="col-md-5 text-center text-md-right">
-              <div class="main-img">
-                <p><br></p>
-                <img class="img-fluid" src="./portrait/image.png" alt="Dr.Red handsome photo" >
-              </div>
-            </div>
-            
-            <div class="col-md-6 text-center text-md-left">
-              <div class="col-md-12 text-center text-md-left">
-                <h3 class="h3-right" >
-                  家醫科專科醫師<br>
-                  微整型美容專科醫師<br>
-                  運動醫學/減重/醫美<br>
-                  從脂肪肝到體脂8%的運動處方認證醫師<br>
-                  🎬醫學大聯盟/小明星大跟班/郁見新同學/姊妹亮起來/同學來了/醫師好辣/我就問你正常嗎/小姊不熙娣<br>
-                  🏥佳飛雅緻美學診所負責人<br>
-                  臺大住院醫師<br>
-                </h3>
-              </div>
-            </div>
-      <!-- </div> -->
+      <div class="row align-items-center">
+  
+        <!-- 左邊圖片 -->
+        <div class="col-md-5 text-center text-md-right">
+          <div class="main-img">
+            <p><br></p>
+            <img class="img-fluid" src="./portrait/image.png" alt="Dr.Red handsome photo">
+          </div>
+        </div>
+  
+        <!-- 右邊文字區塊 -->
+        <div class="col-md-6 text-center text-md-left">
+          <div class="col-md-12">
+            <h3 class="mb-3">關於醫師</h3>
+            <blockquote class="blockquote pl-3" style="border-left: 4px solid #737C75;">
+              <p class="mb-2">家醫科專科醫師</p>
+              <p class="mb-2">微整型美容專科醫師</p>
+              <p class="mb-2">運動醫學 / 減重 / 醫美</p>
+              <p class="mb-2">從脂肪肝到體脂8%的運動處方認證醫師</p>
+              <p class="mb-2">🎬 醫學大聯盟 / 小明星大跟班 / 郁見新同學 / 姊妹亮起來 / 同學來了 / 醫師好辣 / 我就問你正常嗎 / 小姊不熙娣</p>
+              <p class="mb-2">🏥 佳飛雅緻美學診所負責人</p>
+              <p class="mb-0">臺大住院醫師</p>
+            </blockquote>
+          </div>
+        </div>
+  
+      </div>
     </div>
-
-    </div>
-
   </section>
+  
 
 <section class="et-slide" id="tab-schedule">
   <div class="container section-padding">
