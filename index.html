@@ -38,6 +38,7 @@
       scroll-behavior: smooth;
       scroll-padding-top: var(--nav-height);
       -webkit-overflow-scrolling: touch;
+      overflow-x: hidden;
     }
     
     body {
@@ -49,7 +50,25 @@
       position: relative;
       z-index: 0;
     }
-    
+    /*圖片容器與圖片調整（選擇性但推薦）*/
+    .main-img img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    .et-main section p,
+    .et-main section li,
+    .et-main section blockquote {
+      font-size: 1rem; /* 16px，跟表格一致 */
+      line-height: 1.5;
+    }
+    footer {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
     /* Performance Optimizations */
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -119,7 +138,7 @@
     /* Schedule Table */
     .table-schedule {
       border-collapse: collapse;
-
+      font-size: 1rem;
       border: 1px solid #e9ecef;
       border-radius: 8px;
       width: 100%;
@@ -314,6 +333,56 @@
     .social-links a:hover {
       color: var(--primary-color);
     }
+    /* Photos Gallery CSS start */
+    .about-gallery-scroller {
+      width: 100%;
+      overflow-x: auto;
+      padding: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+    .about-gallery-group {
+      display: flex;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    .about-gallery-item {
+      flex: 0 0 150px;
+      height: 350px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .about-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 1200px) {
+      .about-gallery-item {
+        flex: 0 0 calc((100% - 3rem) / 4);
+      }
+    }
+    @media (max-width: 1199px) and (min-width: 768px) {
+      .about-gallery-item {
+        flex: 0 0 calc((100% - 2rem) / 3);
+      }
+    }
+    @media (max-width: 767px) {
+      .about-gallery-item {
+        flex: 0 0 calc((100% - 1rem) / 2);
+      }
+    }
+    @media (max-width: 480px) {
+      .about-gallery-item {
+        flex: 0 0 100%;
+        min-width: unset;
+      }
+    }
+    /* Photos Gallery CSS end */
+
   </style>
 </head>
 <body>
@@ -349,7 +418,9 @@
   <section class="et-slide" id="tab-about">
     <div class="container max-width-adaptive-md">
       <div class="row align-items-center">
-        <h2 class="mb-3">關於Dr.Red</h3>
+        <!-- <h2 class="fw-bold mb-3">關於Dr.Red</h2> -->
+        <h2 class="display-4 mb-4">關於Dr.Red</h2>
+
 
         <!-- 左邊圖片 -->
         <div class="col-md-5 text-center text-md-right">
@@ -359,16 +430,68 @@
         </div>
   
         <!-- 右邊文字區塊 -->
-        <div class="col-md-6 text-center text-md-left">
+        <div class="col-md-6 text-start text-md-left">
           <div class="col-md-12">
             <blockquote class="blockquote pl-3" style="border-left: 4px solid #737C75;">
-              <p class="mb-2">家醫科專科醫師</p>
+              <!-- <p class="mb-2">家醫科專科醫師</p>
               <p class="mb-2">微整型美容專科醫師</p>
               <p class="mb-2">運動醫學 / 減重 / 醫美</p>
               <p class="mb-2">從脂肪肝到體脂8%的運動處方認證醫師</p>
               <p class="mb-2">🎬 醫學大聯盟 / 小明星大跟班 / 郁見新同學 / 姊妹亮起來 / 同學來了 / 醫師好辣 / 我就問你正常嗎 / 小姊不熙娣</p>
               <p class="mb-2">🦋 佳飛雅緻美學診所院長</p>
-              <p class="mb-0">臺大住院醫師</p>
+              <p class="mb-0">臺大住院醫師</p> -->
+              <!-- <p>現任職務 : 佳飛雅緻美學診所 院長</p>
+              <p>學歷 : 中山醫學大學 醫學士</p>
+              <p>醫學經歷</p>
+
+              <ul>台大醫院 不分科住院醫師（外科組）</ul>
+              <ul>台大醫院 實習醫師</ul>
+              <ul>新店耕莘醫院 總醫師</ul> -->
+
+        <div class="mb-4">
+          <h4 class="fw-bold border-bottom pb-1">現任職務</h4>
+          <p>佳飛雅緻美學診所 院長</p>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="fw-bold border-bottom pb-1">學歷</h4>
+          <p>中山醫學大學 醫學士</p>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="fw-bold border-bottom pb-1">醫學經歷</h4>
+            <p>台大醫院 不分科住院醫師（外科組）</p>
+            <p>台大醫院 實習醫師</p>
+            <p>新店耕莘醫院 總醫師</p>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="fw-bold border-bottom pb-1">專業資格</h4>
+            <p>衛生福利部 家庭醫學科 專科醫師</p>
+            <p>台灣微整形美容醫學會（TMIAS） 專科醫師</p>
+        </div>
+
+
+
+        <div class="mb-4">
+          <h4 class="fw-bold border-bottom pb-1">學會會員</h4>
+          <!-- <ul> -->
+            <p>台灣微整形美容醫學會（TMIAS）會員</p>
+            <p>TAAPS 形體美容外科醫學會 會員</p>
+            <p>台灣雷射光電醫學會 會員</p>
+          <!-- </ul> -->
+        </div>
+
+        <div class="mb-4">
+          <h4 class="fw-bold border-bottom pb-1">特長</h4>
+          <!-- <ul> -->
+            <p>無痕筋膜拉提</p>
+            <p>鼻線雕</p>
+            <p>微整填充注射（玻尿酸、肉毒等）</p>
+            <p>電波、音波治療（如海芙音波、Ulthera等）</p>
+            <p>皮秒雷射治療</p>
+          <!-- </ul> -->
+        </div>
             </blockquote>
           </div>
         </div>
@@ -480,26 +603,60 @@
     </div>
   </section>
 
-  <!-- Improved certification section -->
-  <section class="et-slide" id="tab-certification">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-4">
-          <h2 class="display-4 mb-4">專業認證</h2>
-          <img class="img-fluid rounded shadow-lg" src="IMG_2365.JPG" alt="鄭瑞德醫師的專業證書與認證" width="800" height="600" loading="lazy">
-        </div>
-      </div>
+<section class="et-slide" id="tab-certification">
+  <div class="container section-padding d-flex flex-column align-items-center">
+    <!-- "專業認證" heading outside the box and centered -->
+    <h2 class="display-4 mb-4 text-center">專業認證</h2>
+
+    <!-- The bordered box -->
+    <div style="border: 2px solid #737C75; padding: 20px 30px; max-width: 600px; width: 100%; background-color: #fafafa; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; font-size: 1.2rem; line-height: 1.8;">
+      
+      <!-- Center the "醫美技術認證" subtitle -->
+      <h4 class="fw-bold border-bottom pb-1 text-center">醫美技術認證</h4>
+      
+      <ul>
+        <li><strong>MINT®</strong> 韓國神力拉提 原廠認證醫師</li>
+        <li>海芙音波 原廠認證醫師</li>
+        <li>EIM（Exercise is Medicine）運動處方認證資格</li>
+        <li>Lutronic 韓國原廠研習醫師</li>
+        <li>Vivabella 薇貝拉 / 魔法針 認證講師</li>
+        <li>Sculptra 舒顏萃 原廠認證醫師</li>
+        <li>Teoxane 提奧希玻尿酸 原廠認證醫師</li>
+      </ul>
     </div>
-  </section>
+    
+    <p></p>
+    <div style="border: 2px solid #737C75; padding: 20px 30px; max-width: 600px; width: 100%; background-color: #fafafa; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; font-size: 1.2rem; line-height: 1.8;">
+      <!-- Center the "醫美技術認證" subtitle -->
+      <h4 class="fw-bold border-bottom pb-1 text-center">減重技術認證</h4>
+      <ul>
+        <li>減重技術認證</li>
+        <!-- 
+        <li>海芙音波 原廠認證醫師</li>
+        <li>EIM（Exercise is Medicine）運動處方認證資格</li>
+        <li>Lutronic 韓國原廠研習醫師</li>
+        <li>Vivabella 薇貝拉 / 魔法針 認證講師</li>
+        <li>Sculptra 舒顏萃 原廠認證醫師</li>
+        <li>Teoxane 提奧希玻尿酸 原廠認證醫師</li> 
+        -->
+      </ul>
+      
+    </div>    
+  </div>
+</section>
+
+
 
   <section class="et-slide" id="tab-reward">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center mb-4">
-          <h2 class="display-4 mb-4">獲獎經歷</h2>
-          <p class="lead">此區域內容建置中，敬請期待...</p>
+          <h2 class="display-4 mb-4">獲獎</h2>
+          <p class="lead">醫師還在努力獲獎中，敬請期待...</p>
           <!-- 請在此處添加獲獎內容 -->
         </div>
+            <div id="reward-gallery-root"></div>
+          </div>
       </div>
     </div>
   </section>
@@ -572,8 +729,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateSectionPositions = () => {
     sectionPositions = slides.map(section => ({
       id: section.id,
-      top: section.offsetTop - 70, // Offset for fixed header
-      bottom: section.offsetTop + section.offsetHeight - 70
+      top: section.offsetTop - 60,   // 與 nav-height 同值
+      bottom: section.offsetTop + section.offsetHeight - 60
     }));
   };
   
@@ -627,10 +784,11 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSectionPositions();
         lastWidth = window.innerWidth;
       }
-    }, 100);
+    }, 200);
   }, { passive: true });
   
   // Smooth scroll for navigation links
+  // 平滑滾動時的 offset 也改 60
   tabs.forEach(tab => {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
@@ -645,7 +803,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
   // Back to top button click
   backToTopBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -656,21 +813,98 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // Add data-label attributes for responsive tables
-  document.querySelectorAll('.table-schedule td').forEach(cell => {
-    const headerText = cell.closest('tr').querySelector('th')?.textContent || 
-                    document.querySelector('.table-schedule th:nth-child(' + 
-                    (Array.from(cell.parentNode.children).indexOf(cell) + 1) + 
-                    ')')?.textContent;
-    
-    if (headerText) {
-      cell.setAttribute('data-label', headerText);
-    }
+  document.querySelectorAll('.table-schedule tbody tr').forEach(row => {
+    const headers = Array.from(document.querySelectorAll('.table-schedule thead th'));
+    row.querySelectorAll('td').forEach((cell, idx) => {
+      if (headers[idx]) {
+        cell.setAttribute('data-label', headers[idx].textContent.trim());
+      }
+    });
   });
+
   
   // Initialize
   updateSectionPositions();
   updateActiveTab();
 });
+</script>
+<script>
+class AboutGallery {
+  constructor(containerId, images = []) {
+    this.container = document.getElementById(containerId);
+    if (!this.container) throw new Error(`Container #${containerId} not found`);
+    this.images = images;
+  }
+
+  render() {
+    if (!this.container) return;
+    this.container.innerHTML = `
+      <section class="about-gallery-section">
+        <div class="about-gallery-scroller" id="aboutGalleryScroller">
+          <div class="about-gallery-group" id="aboutGalleryGroup">
+            ${this.images.map((img, idx) => `
+              <div class="about-gallery-item">
+                <img src="${img.src}" alt="${img.alt}" loading="lazy" id="img-${idx}" />
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+    `;
+
+    this.addErrorHandling();
+    this.addTouchScroll();
+  }
+
+  // Hide images that fail to load
+  addErrorHandling() {
+    this.images.forEach((_, idx) => {
+      const img = document.getElementById(`img-${idx}`);
+      if (img) {
+        img.onerror = () => {
+          // Hide broken image container
+          img.parentElement.style.display = 'none';
+        };
+      }
+    });
+  }
+
+  addTouchScroll() {
+    const galleryGroup = this.container.querySelector('.about-gallery-group');
+    if (!galleryGroup) return;
+
+    let touchX0 = 0, dragging = false;
+    galleryGroup.addEventListener('touchstart', e => {
+      touchX0 = e.touches[0].clientX;
+      dragging = true;
+    });
+    galleryGroup.addEventListener('touchmove', e => {
+      if (!dragging) return;
+      const dx = touchX0 - e.touches[0].clientX;
+      galleryGroup.scrollLeft += dx;
+      touchX0 = e.touches[0].clientX;
+    });
+    galleryGroup.addEventListener('touchend', () => {
+      dragging = false;
+    });
+  }
+}
+
+// Generate images with guessed names
+document.addEventListener('DOMContentLoaded', () => {
+  const images = [];
+  const maxImages = 20;
+  for (let i = 1; i <= maxImages; i++) {
+    images.push({
+      src: `reward_photos/${i}.jpg`,
+      alt: `reward ${i}`
+    });
+  }
+
+  const gallery = new AboutGallery('reward-gallery-root', images);
+  gallery.render();
+});
+
 </script>
 </body>
 </html>
