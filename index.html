@@ -177,11 +177,23 @@
         will-change: transform;
         contain: content;
       }
-    
-      .rounded-circle {
-        max-width: 80vw;
-        margin-bottom: 2rem;
+        
+      .et-hero-tabs {
+        padding-top: 20px !important;   /* Reduce large padding on top */
+        min-height: auto !important;    /* Prevent forcing large height */
       }
+
+      .et-slide {
+        padding-top: 20px !important;   /* If this adds space, reduce it */
+        margin-top: 0 !important;
+      }
+
+      /* Also ensure the image container doesn't add extra margin */
+      .et-hero-tabs .rounded-circle {
+        margin-top: 0 !important;
+        max-width: 80vw;  /* keep responsive but no extra spacing */
+      }
+      
     }
     
     @media (max-width: 576px) {
@@ -476,6 +488,7 @@
         <div class="mb-4">
           <h4 class="fw-bold border-bottom pb-1">學會會員</h4>
           <!-- <ul> -->
+            <p>台灣顏面重建整型外科醫學會 會員</p>
             <p>台灣微整形美容醫學會（TMIAS）會員</p>
             <p>TAAPS 形體美容外科醫學會 會員</p>
             <p>台灣雷射光電醫學會 會員</p>
@@ -606,14 +619,14 @@
 <section class="et-slide" id="tab-certification">
   <div class="container section-padding d-flex flex-column align-items-center">
     <!-- "專業認證" heading outside the box and centered -->
-    <h2 class="display-4 mb-4 text-center">專業認證</h2>
-
+    
     <!-- The bordered box -->
     <div style="border: 2px solid #737C75; padding: 20px 30px; max-width: 600px; width: 100%; background-color: #fafafa; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; font-size: 1.2rem; line-height: 1.8;">
+      <h2 class="display-4 mb-4 text-center border-bottom pb-1 ">認證</h2>
       
       <!-- Center the "醫美技術認證" subtitle -->
-      <h4 class="fw-bold border-bottom pb-1 text-center">醫美技術認證</h4>
-      
+      <!-- <h4 class="fw-bold border-bottom pb-1 text-center">醫美技術認證</h4>
+       -->
       <ul>
         <li><strong>MINT®</strong> 韓國神力拉提 原廠認證醫師</li>
         <li>海芙音波 原廠認證醫師</li>
@@ -621,15 +634,17 @@
         <li>Vivabella 薇貝拉 / 魔法針 認證講師</li>
         <li>Sculptra 舒顏萃 原廠認證醫師</li>
         <li>Teoxane 提奧希玻尿酸 原廠認證醫師</li>
+        <li>EIM（Exercise is Medicine）運動處方認證資格</li>
+
       </ul>
     </div>
     
     <p></p>
-    <div style="border: 2px solid #737C75; padding: 20px 30px; max-width: 600px; width: 100%; background-color: #fafafa; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; font-size: 1.2rem; line-height: 1.8;">
+    <!-- <div style="border: 2px solid #737C75; padding: 20px 30px; max-width: 600px; width: 100%; background-color: #fafafa; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; font-size: 1.2rem; line-height: 1.8;"> -->
       <!-- Center the "醫美技術認證" subtitle -->
-      <h4 class="fw-bold border-bottom pb-1 text-center">減重技術認證</h4>
-      <ul>
-        <li>EIM（Exercise is Medicine）運動處方認證資格</li>
+      <!-- <h4 class="fw-bold border-bottom pb-1 text-center">減重技術認證</h4> -->
+      <!-- <ul> -->
+        <!-- <li>EIM（Exercise is Medicine）運動處方認證資格</li> -->
         <!-- 
         <li>海芙音波 原廠認證醫師</li>
         <li>EIM（Exercise is Medicine）運動處方認證資格</li>
@@ -638,8 +653,8 @@
         <li>Sculptra 舒顏萃 原廠認證醫師</li>
         <li>Teoxane 提奧希玻尿酸 原廠認證醫師</li> 
         -->
-      </ul>
-    </div>    
+      <!-- </ul> -->
+    <!-- </div>     -->
     <div id="reward-gallery-root"></div>
     </div>      
   </div>
